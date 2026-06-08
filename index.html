@@ -1,12 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dbsgh22-arch.github.io</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Personal website — portfolio, experience, and CV." />
+  <title>Your Name — Personal Site</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Welcome</h1>
-    <p>HW6 project site.</p>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ── Navigation ─────────────────────────────────── -->
+  <nav aria-label="Main navigation">
+    <div class="nav-inner">
+      <a class="nav-brand" href="#">Your Name</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#cv">CV</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── Main content ───────────────────────────────── -->
+  <main id="main">
+
+    <!-- Hero / Profile -->
+    <div class="card hero">
+      <img
+        class="profile-img"
+        src="assets/profile.jpg"
+        alt="Portrait of Your Name"
+        width="120"
+        height="120"
+      />
+      <div class="hero-text">
+        <h1>Your Name</h1>
+        <p class="subtitle">Software Engineer &amp; Researcher · City, Country</p>
+        <div class="hero-links" role="list">
+          <a class="btn btn-primary" href="#contact" role="listitem">Get in touch</a>
+          <a class="btn btn-outline" href="assets/cv.pdf" role="listitem" download>Download CV</a>
+          <a class="btn btn-outline" href="https://github.com/yourusername" role="listitem" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="btn btn-outline" href="https://linkedin.com/in/yourusername" role="listitem" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- About -->
+    <section id="about" aria-labelledby="about-heading" class="card">
+      <h2 id="about-heading">About</h2>
+      <div class="about">
+        <p>
+          Hi! I'm a passionate software engineer with a focus on building clean,
+          user-friendly applications. I enjoy working across the full stack and
+          have a particular interest in open-source tooling and developer experience.
+        </p>
+        <p>
+          Outside of coding I like hiking, photography, and reading about distributed
+          systems. Feel free to reach out — I'm always happy to chat about
+          interesting problems.
+        </p>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" aria-labelledby="skills-heading" class="card">
+      <h2 id="skills-heading">Skills</h2>
+      <ul class="tag-list" aria-label="Technical skills">
+        <li class="tag">Python</li>
+        <li class="tag">JavaScript / TypeScript</li>
+        <li class="tag">React</li>
+        <li class="tag">Node.js</li>
+        <li class="tag">PostgreSQL</li>
+        <li class="tag">Docker</li>
+        <li class="tag">Linux</li>
+        <li class="tag">Git</li>
+        <li class="tag">REST APIs</li>
+        <li class="tag">Machine Learning</li>
+      </ul>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" aria-labelledby="exp-heading" class="card">
+      <h2 id="exp-heading">Experience</h2>
+      <div class="timeline" role="list">
+
+        <article class="timeline-item" role="listitem">
+          <h3>Software Engineer</h3>
+          <span class="period">2022 – Present</span>
+          <span class="org">Company Name · Full-time</span>
+          <p>Developed and maintained backend services handling millions of
+            requests per day. Improved deploy pipeline reliability and reduced
+            mean time to recovery by 40 %.</p>
+        </article>
+
+        <article class="timeline-item" role="listitem">
+          <h3>Junior Developer</h3>
+          <span class="period">2020 – 2022</span>
+          <span class="org">Another Company · Full-time</span>
+          <p>Built React frontends and REST APIs for internal tooling, working
+            in an agile team of eight engineers.</p>
+        </article>
+
+        <article class="timeline-item" role="listitem">
+          <h3>Research Intern</h3>
+          <span class="period">Summer 2019</span>
+          <span class="org">University Lab</span>
+          <p>Implemented and benchmarked graph neural network models for
+            link-prediction tasks.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" aria-labelledby="edu-heading" class="card">
+      <h2 id="edu-heading">Education</h2>
+      <div class="timeline" role="list">
+
+        <article class="timeline-item" role="listitem">
+          <h3>B.Sc. Computer Science</h3>
+          <span class="period">2017 – 2021</span>
+          <span class="org">University Name</span>
+          <p>Graduated with honors. Thesis on efficient nearest-neighbor search
+            in high-dimensional spaces.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" aria-labelledby="proj-heading" class="card">
+      <h2 id="proj-heading">Projects</h2>
+      <div class="projects-grid">
+
+        <article class="project-card">
+          <h3>Project Alpha</h3>
+          <p>A CLI tool for automating repetitive dev tasks, written in Python.</p>
+          <a href="https://github.com/yourusername/project-alpha" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+        </article>
+
+        <article class="project-card">
+          <h3>Project Beta</h3>
+          <p>Real-time collaborative note-taking app built with React and WebSockets.</p>
+          <a href="https://github.com/yourusername/project-beta" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+        </article>
+
+        <article class="project-card">
+          <h3>Project Gamma</h3>
+          <p>Open-source data visualisation library with zero dependencies.</p>
+          <a href="https://github.com/yourusername/project-gamma" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CV / Resume -->
+    <section id="cv" aria-labelledby="cv-heading" class="card cv-section">
+      <h2 id="cv-heading">CV / Resume</h2>
+      <p>Download my full curriculum vitae for a detailed overview of my
+        background, publications, and achievements.</p>
+      <a class="btn btn-primary" href="assets/cv.pdf" download>
+        ↓ Download CV (PDF)
+      </a>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" aria-labelledby="contact-heading" class="card">
+      <h2 id="contact-heading">Contact</h2>
+      <ul class="contact-links">
+        <li>
+          <a href="mailto:you@example.com">you@example.com</a>
+        </li>
+        <li>
+          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </li>
+        <li>
+          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </li>
+        <li>
+          <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">Twitter / X</a>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────── -->
+  <footer>
+    <p>© <span id="year"></span> Your Name. Built with plain HTML &amp; CSS.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>

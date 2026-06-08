@@ -1,0 +1,264 @@
+/* ── Reset & base ───────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --accent:   #2563eb;
+  --accent-h: #1d4ed8;
+  --text:     #1e293b;
+  --muted:    #64748b;
+  --bg:       #f8fafc;
+  --card:     #ffffff;
+  --border:   #e2e8f0;
+  --radius:   0.75rem;
+  --max-w:    760px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* ── Skip link (accessibility) ─────────────────────── */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0 0 var(--radius) var(--radius);
+  font-weight: 600;
+  z-index: 999;
+  transition: top 0.2s;
+}
+.skip-link:focus { top: 0; }
+
+/* ── Nav ────────────────────────────────────────────── */
+nav {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-inner {
+  max-width: var(--max-w);
+  margin: auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 3.5rem;
+}
+.nav-brand {
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1.05rem;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.15s;
+}
+.nav-links a:hover,
+.nav-links a:focus { color: var(--accent); }
+
+/* ── Layout wrapper ─────────────────────────────────── */
+main {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+/* ── Card ───────────────────────────────────────────── */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+}
+
+/* ── Hero / profile section ─────────────────────────── */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--border);
+  flex-shrink: 0;
+}
+.hero-text h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.hero-text .subtitle {
+  color: var(--muted);
+  font-size: 1rem;
+  margin-top: 0.25rem;
+}
+.hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+.btn-primary:hover,
+.btn-primary:focus { background: var(--accent-h); }
+.btn-outline {
+  border: 1.5px solid var(--border);
+  color: var(--text);
+  background: transparent;
+}
+.btn-outline:hover,
+.btn-outline:focus { border-color: var(--accent); color: var(--accent); }
+
+/* ── Section headings ───────────────────────────────── */
+section h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+}
+
+/* ── About ──────────────────────────────────────────── */
+.about p + p { margin-top: 0.75rem; }
+
+/* ── Skills ─────────────────────────────────────────── */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+}
+.tag {
+  background: #eff6ff;
+  color: var(--accent);
+  border: 1px solid #bfdbfe;
+  border-radius: 999px;
+  padding: 0.2rem 0.75rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+/* ── Experience / education ─────────────────────────── */
+.timeline { display: flex; flex-direction: column; gap: 1.25rem; }
+.timeline-item { display: grid; grid-template-columns: 1fr auto; gap: 0.25rem 1rem; }
+.timeline-item h3 { font-size: 1rem; font-weight: 600; grid-column: 1; }
+.timeline-item .period {
+  font-size: 0.82rem;
+  color: var(--muted);
+  white-space: nowrap;
+  grid-column: 2;
+  grid-row: 1;
+  text-align: right;
+}
+.timeline-item .org {
+  font-size: 0.9rem;
+  color: var(--muted);
+  grid-column: 1;
+}
+.timeline-item p {
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+  grid-column: 1 / -1;
+}
+
+/* ── Projects ───────────────────────────────────────── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.project-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.project-card h3 { font-size: 0.95rem; font-weight: 600; }
+.project-card p { font-size: 0.85rem; color: var(--muted); flex: 1; }
+.project-card a {
+  font-size: 0.82rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+.project-card a:hover { text-decoration: underline; }
+
+/* ── CV ─────────────────────────────────────────────── */
+.cv-section p { color: var(--muted); font-size: 0.95rem; margin-bottom: 1rem; }
+
+/* ── Contact ────────────────────────────────────────── */
+.contact-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.contact-links a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+.contact-links a:hover { text-decoration: underline; }
+
+/* ── Footer ─────────────────────────────────────────── */
+footer {
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--muted);
+  padding: 2rem 1rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ─────────────────────────────────────── */
+@media (max-width: 520px) {
+  .hero { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .profile-img { width: 90px; height: 90px; }
+  .hero-text h1 { font-size: 1.4rem; }
+  .timeline-item { grid-template-columns: 1fr; }
+  .timeline-item .period { grid-column: 1; grid-row: auto; text-align: left; }
+}
